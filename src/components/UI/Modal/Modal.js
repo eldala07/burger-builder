@@ -10,7 +10,7 @@ class Modal extends Component  {
     // with this, we ensure we update only what's in
     // the modal if the props changes
     // This is good for performances
-    return nextProps.show !== this.props.show;
+    return (nextProps.show !== this.props.show) || (nextProps.children !== this.props.children);
   }
 
   componentWillUpdate() {
