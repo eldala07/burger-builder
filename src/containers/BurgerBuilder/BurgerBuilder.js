@@ -11,7 +11,9 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import * as actions from '../../store/actions/index';
 
-class BurgerBuilder extends Component {
+// We should export it here also to be able to test it without redux
+// which is given in the default export
+export class BurgerBuilder extends Component {
 
   state = {
     purchasing: false,
