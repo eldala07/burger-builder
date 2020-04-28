@@ -23,4 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # IDE
-.idea/
+/.idea
+
+# Firebase
+/.firebase
