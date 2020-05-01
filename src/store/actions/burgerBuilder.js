@@ -1,5 +1,4 @@
 import * as actionTypes from './actionTypes';
-import axios from '../../axios-orders';
 
 // Here we create the action creators
 export const addIngredient = (name) => {
@@ -31,14 +30,9 @@ export const fetchIngredientsFailed = () => {
 
 // Asynchronous action creator
 // (taking the dispatch given by redux)
+// EDIT: Not asynchronous anymore thanks to Sagas
 export const initIngredients = () => {
-  return dispatch => {
-    axios.get('/ingredients.json')
-      .then(response => {
-        dispatch(setIngredients(response.data))
-      })
-      .catch(error => {
-        dispatch(fetchIngredientsFailed())
-      });
+  return {
+    type: actionTypes.INIT_INGREDIENTS
   }
 };
